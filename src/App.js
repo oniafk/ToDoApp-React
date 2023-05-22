@@ -2,6 +2,8 @@ import { ToDoCounter } from "./ToDoCounter";
 import { ToDoSeach } from "./ToDoSearch";
 import { ToDoList } from "./ToDoList";
 import { CreateToDoButton } from "./CreateToDoButton";
+import { ToDoItem } from "./ToDoItem";
+
 import "./App.css";
 
 function App() {
@@ -19,16 +21,6 @@ function App() {
 
       <CreateToDoButton />
     </div>
-  );
-}
-
-function ToDoItem() {
-  return (
-    <li>
-      <span>✓</span>
-      <p>first task</p>
-      <span>×</span>
-    </li>
   );
 }
 
