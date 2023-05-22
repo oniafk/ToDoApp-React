@@ -1,9 +1,13 @@
-import logo from './platzi.webp';
-import './App.css';
+import logo from "./platzi.webp";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
+      <ToDoList />
+      <ToDoList />
+      <ToDoList />
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -19,6 +23,16 @@ function App() {
         </a>
       </header>
     </div>
+  );
+}
+
+function ToDoList() {
+  return (
+    <li>
+      <span>✓</span>
+      <p>first task</p>
+      <span>×</span>
+    </li>
   );
 }
 
