@@ -1,8 +1,8 @@
-import { ToDoCounter } from "./components/ToDoCounter";
-import { ToDoSeach } from "./components/ToDoSearch";
-import { ToDoList } from "./components/ToDoList";
-import { CreateToDoButton } from "./components/CreateToDoButton";
-import { ToDoItem } from "./components/ToDoItem";
+import { ToDoCounter } from "./components/ToDoCounter/ToDoCounter";
+import { ToDoSeach } from "./components/ToDoSearch/ToDoSearch";
+import { ToDoList } from "./components/ToDoList/ToDoList";
+import { CreateToDoButton } from "./components/CreateToDoButton/CreateToDoButton";
+import { ToDoItem } from "./components/ToDoItem/ToDoItem";
 import React from "react";
 
 // const defaultToDos = [
