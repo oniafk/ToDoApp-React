@@ -1,3 +1,4 @@
+import React from "react";
 import { ToDoCounter } from "../components/ToDoCounter/ToDoCounter";
 import { ToDoSeach } from "../components/ToDoSearch/ToDoSearch";
 import { ToDoList } from "../components/ToDoList/ToDoList";
@@ -6,12 +7,20 @@ import { ToDoItem } from "../components/ToDoItem/ToDoItem";
 import { EmptyToDo } from "../components/EmptyToDo/EmptyToDo";
 import { ToDoError } from "../components/ToDoError/ToDoError";
 import { ToDoLoading } from "../components/ToDoLoading/ToDoLoading";
-import React from "react";
+import { Modal } from "../components/Modal/Modal";
+import { ToDoForm } from "../components/ToDoForm/ToDoForm";
 import { ToDoContext } from "../components/ToDoContext/ToDoContext";
 
 function AppUI() {
-  const { loading, error, searchedToDos, completeToDo, deleteToDo } =
-    React.useContext(ToDoContext);
+  const {
+    loading,
+    error,
+    searchedToDos,
+    completeToDo,
+    deleteToDo,
+    openModal,
+    setOpenModal,
+  } = React.useContext(ToDoContext);
 
   return (
     <>
@@ -40,7 +49,13 @@ function AppUI() {
         ))}
       </ToDoList>
 
-      <CreateToDoButton />
+      <CreateToDoButton setOpenModal={setOpenModal} />
+
+      {openModal && (
+        <Modal>
+          <ToDoForm />
+        </Modal>
+      )}
     </>
   );
 }
