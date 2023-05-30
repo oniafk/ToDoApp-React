@@ -7,23 +7,16 @@ import { EmptyToDo } from "../components/EmptyToDo/EmptyToDo";
 import { ToDoError } from "../components/ToDoError/ToDoError";
 import { ToDoLoading } from "../components/ToDoLoading/ToDoLoading";
 import React from "react";
+import { ToDoContext } from "../components/ToDoContext/ToDoContext";
 
-function AppUI({
-  loading,
-  error,
-  completedToDos,
-  totalToDos,
-  searchValue,
-  setSearchValue,
-  searchedToDos,
-  completeToDo,
-  deleteToDo,
-}) {
+function AppUI() {
+  const { loading, error, searchedToDos, completeToDo, deleteToDo } =
+    React.useContext(ToDoContext);
+
   return (
-    <React.Fragment>
-      <ToDoCounter completed={completedToDos} total={totalToDos} />
-
-      <ToDoSeach searchValue={searchValue} setSearchValue={setSearchValue} />
+    <>
+      <ToDoCounter />
+      <ToDoSeach />
 
       <ToDoList>
         {loading && (
@@ -48,7 +41,7 @@ function AppUI({
       </ToDoList>
 
       <CreateToDoButton />
-    </React.Fragment>
+    </>
   );
 }
 

@@ -23,9 +23,9 @@ function useLocalStorage(itemName, initialValue) {
         setLoading(false);
       } catch (error) {
         setLoading(false);
-        setError(error);
+        setError(true);
       }
-    }, 500);
+    }, 2000);
   }, []);
 
   const saveItem = (newItem) => {
@@ -33,7 +33,24 @@ function useLocalStorage(itemName, initialValue) {
     setItem(newItem);
   };
 
-  return { item, saveItem, loading, error };
+  return {
+    item,
+    saveItem,
+    loading,
+    error,
+  };
 }
 
 export { useLocalStorage };
+
+// localStorage.removeItem('toDos_V1');
+
+// const defaultToDos = [
+//   { text: "Finish ToDo App", completed: true },
+//   { text: "keep learning react", completed: true },
+//   { text: "Update WoW", completed: false },
+//   { text: "Do math homework", completed: false },
+//   { text: "play apex", completed: false },
+// ];
+
+// localStorage.setItem("toDos_V1", JSON.stringify(defaultToDos));
